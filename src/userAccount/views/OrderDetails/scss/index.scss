@@ -40,7 +40,7 @@
       font-weight: $bold-font-weight;
       margin-bottom: $spacer;
       padding-bottom: $spacer;
-      text-transform: uppercase;
+      text-transform: capitalize;
     }
 
     @media (min-width: $small-screen) {

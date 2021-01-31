@@ -4,6 +4,7 @@ export { default as CheckoutLogin } from "./CheckoutLogin";
 export { default as ContentPage } from "./ContentPage";
 export { default as Dropdown } from "./Dropdown";
 export { default as Form } from "./Form";
+export { default as Title } from "./Title";
 export { default as Loader } from "./Loader";
 export { default as LoginForm } from "./LoginForm";
 export { default as MenuDropdown } from "./MenuDropdown";
@@ -23,6 +24,7 @@ export { default as AddressSummary } from "./AddressSummary";
 export { CartTable } from "./CartTable";
 export { default as ProductsFeatured } from "./ProductsFeatured";
 export { default as PostsLatest } from "./PostsLatest";
+export { default as PostListItem } from "./PostListItem";
 export { Filters, ProductFilters } from "./ProductFilters";
 export {
   default as Breadcrumbs,
@@ -54,3 +56,8 @@ export {
 export { default as Select } from "./Select";
 export { default as Error } from "./Error";
 export { default as NotificationTemplate } from "./NotificationTemplate";
+export { default as ServicesList } from "./ServicesList";
+export { default as ServicesListItem } from "./ServicesListItem";
+export { default as SkillsList } from "./SkillsList";
+export { default as SkillsListItem } from "./SkillsListItem";
+export { ContactForm } from "./ContactForm";

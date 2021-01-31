@@ -16,6 +16,7 @@ export enum OverlayType {
 export enum OverlayTheme {
   left = "left",
   right = "right",
+  top = "top",
   modal = "modal",
 }
 

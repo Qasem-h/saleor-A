@@ -1,40 +1,36 @@
 import * as React from "react";
-import { Link } from "react-router-dom";
 
-import { Carousel, ProductListItem } from "..";
-import { generateProductUrl, maybe } from "../../core/utils";
+import { ProductListItem, Title } from "..";
+import { maybe } from "../../core/utils";
 import { TypedFeaturedProductsQuery } from "./queries";
 
 import "./scss/index.scss";
 
 interface ProductsFeaturedProps {
   title?: string;
+  subTitle?: string;
 }
 
-const ProductsFeatured: React.FC<ProductsFeaturedProps> = ({ title }) => {
+const ProductsFeatured: React.FC<ProductsFeaturedProps> = ({
+  title,
+  subTitle,
+}) => {
   return (
     <TypedFeaturedProductsQuery displayError={false}>
       {({ data }) => {
-        const products = maybe(
-          () => data.shop.products.edges,
-          []
-        );
-        console.log("products", products);
+        const products = maybe(() => data.products.edges, []);
         if (products.length) {
           return (
             <div className="products-featured">
               <div className="container">
-                <h3>{title}</h3>
-                <Carousel>
+                <Title title={title} subTitle={subTitle} />
+                <div className="row">
                   {products.map(({ node: product }) => (
-                    <Link
-                      to={generateProductUrl(product.id, product.name)}
-                      key={product.id}
-                    >
+                    <div className="col-md-3 col-sm-6">
                       <ProductListItem product={product} />
-                    </Link>
+                    </div>
                   ))}
-                </Carousel>
+                </div>
               </div>
             </div>
           );
@@ -46,7 +42,8 @@ const ProductsFeatured: React.FC<ProductsFeaturedProps> = ({ title }) => {
 };
 
 ProductsFeatured.defaultProps = {
-  title: "Featured",
+  title: "Featured Products",
+  subTitle: "Awesome Products",
 };
 
 export default ProductsFeatured;

@@ -15,6 +15,15 @@ export interface SecondaryMenu_shop_navigation_secondary_items_category {
   name: string;
 }
 
+export interface SecondaryMenu_shop_navigation_secondary_items_pategory {
+  __typename: "Pategory";
+  /**
+   * The ID of the object.
+   */
+  id: string;
+  name: string;
+}
+
 export interface SecondaryMenu_shop_navigation_secondary_items_collection {
   __typename: "Collection";
   /**
@@ -31,6 +40,15 @@ export interface SecondaryMenu_shop_navigation_secondary_items_page {
 
 export interface SecondaryMenu_shop_navigation_secondary_items_children_category {
   __typename: "Category";
+  /**
+   * The ID of the object.
+   */
+  id: string;
+  name: string;
+}
+
+export interface SecondaryMenu_shop_navigation_secondary_items_children_pategory {
+  __typename: "Pategory";
   /**
    * The ID of the object.
    */
@@ -60,6 +78,7 @@ export interface SecondaryMenu_shop_navigation_secondary_items_children {
   id: string;
   name: string;
   category: SecondaryMenu_shop_navigation_secondary_items_children_category | null;
+  pategory: SecondaryMenu_shop_navigation_secondary_items_children_pategory | null;
   /**
    * URL to the menu item.
    */
@@ -76,6 +95,7 @@ export interface SecondaryMenu_shop_navigation_secondary_items {
   id: string;
   name: string;
   category: SecondaryMenu_shop_navigation_secondary_items_category | null;
+  pategory: SecondaryMenu_shop_navigation_secondary_items_pategory | null;
   /**
    * URL to the menu item.
    */

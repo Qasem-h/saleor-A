@@ -15,3 +15,12 @@
     right: 0;
   }
 }
+
+@keyframes sidenavBottomOpen {
+  from {
+    bottom: -100rem;
+  }
+  to {
+    bottom: 0;
+  }
+}

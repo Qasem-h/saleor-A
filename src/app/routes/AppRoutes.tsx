@@ -8,23 +8,26 @@ import { OrderDetails } from "../../userAccount/views";
 import { Account, AccountConfirm } from "../../views/Account";
 import { ArticlePage } from "../../views/Article";
 import { CategoryPage } from "../../views/Category";
+import { PategoryPage } from "../../views/Pategory";
 
 import { CollectionPage } from "../../views/Collection";
 import { HomePage } from "../../views/Home";
 import { ProductPage } from "../../views/Product";
-import { PostPage } from "../../views/Post";
+// import { PostPage } from "../../views/Post";
 import { SearchPage } from "../../views/Search";
+import { BlogPage } from "../../views/Blog";
 
 import * as paths from "./paths";
 
 export const Routes: React.FC = () => (
   <Switch>
     <Route exact path={paths.baseUrl} component={HomePage} />
+    <Route exact path={paths.blogUrl} component={BlogPage} />
     <Route path={paths.searchUrl} component={SearchPage} />
     <Route path={paths.categoryUrl} component={CategoryPage} />
+    <Route path={paths.pategoryUrl} component={PategoryPage} />
     <Route path={paths.collectionUrl} component={CollectionPage} />
     <Route path={paths.productUrl} component={ProductPage} />
-    <Route path={paths.postUrl} component={PostPage} />
     <Route path={paths.cartUrl} component={CartPage} />
     <Route path={paths.checkoutLoginUrl} component={CheckoutLogin} />
     <Route path={paths.pageUrl} component={ArticlePage} />

@@ -82,7 +82,7 @@ class Search extends React.Component<SearchProps, SearchState> {
 
   handleInputBlur = () => {
     if (!this.hasSearchPhrase) {
-      this.props.overlay.hide();
+      // this.props.overlay.hide();
     }
   };
 
@@ -100,84 +100,109 @@ class Search extends React.Component<SearchProps, SearchState> {
           onClick={e => e.stopPropagation()}
           onSubmit={this.handleSubmit}
         >
-          <div className="search__input">
-            <DebouncedTextField
-              onChange={evt => this.setState({ search: evt.target.value })}
-              value={this.state.search}
-              iconLeft={
-                <ReactSVG
-                  path={closeImg}
-                  onClick={this.props.overlay.hide}
-                  className="search__input__close-btn"
-                />
-              }
-              iconRight={<ReactSVG path={searchImg} />}
-              autoFocus
-              placeholder={this.props.intl.formatMessage(commonMessages.search)}
-              onBlur={this.handleInputBlur}
-            />
-          </div>
-          <div
-            className={classNames({
-              search__products: true,
-              "search__products--expanded": this.hasSearchPhrase,
-            })}
-          >
-            <NetworkStatus>
-              {isOnline => {
-                if (this.hasSearchPhrase) {
-                  return (
-                    <TypedSearchResults
-                      renderOnError
-                      displayError={false}
-                      errorPolicy="all"
-                      variables={{ query: this.state.search }}
-                    >
-                      {({ data, error, loading }) => {
-                        if (this.hasResults(data)) {
-                          return (
-                            <>
-                              <ul>
-                                {data.products.edges.map(product => (
-                                  <ProductItem
-                                    {...product}
-                                    key={product.node.id}
-                                  />
-                                ))}
-                              </ul>
-                              <div className="search__products__footer">
-                                {loading ? (
-                                  <Loader />
-                                ) : (
-                                  <Button
-                                    testingContext="searchProductsButton"
-                                    btnRef={this.submitBtnRef}
-                                    type="submit"
-                                  >
-                                    <FormattedMessage defaultMessage="Show all results" />
-                                  </Button>
-                                )}
-                              </div>
-                            </>
-                          );
-                        }
+          <div className="search_side-panel">
+            <div className="search_side-panel_headerr">
+              <div className="container">
+                <div className="search_side-panel_headerr-inner">
+                  <div className="search_side-panel_headerr-inner-remove">
+                    <ReactSVG
+                      path={closeImg}
+                      onClick={this.props.overlay.hide}
+                      className="search__input__close-btn"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
 
-                        if (error) {
-                          return isOnline ? (
-                            <Error error={error.message} />
-                          ) : (
-                            <OfflinePlaceholder />
-                          );
-                        }
+            <div className="container">
+              <div className="row">
+                <div className="col-lg-10">
+                  <fieldset>
+                    <div className="search_search-group">
+                      <div className="search_search-group__icon">
+                        <ReactSVG path={searchImg} />
+                      </div>
+                      <div className="search__input">
+                        <DebouncedTextField
+                          onChange={evt =>
+                            this.setState({ search: evt.target.value })
+                          }
+                          value={this.state.search}
+                          autoFocus
+                          placeholder={this.props.intl.formatMessage(
+                            commonMessages.search
+                          )}
+                          onBlur={this.handleInputBlur}
+                        />
+                      </div>
+                    </div>
+                  </fieldset>
+                </div>
+              </div>
+            </div>
+            <div
+              className={classNames({
+                search__products: true,
+                "search__products--expanded": this.hasSearchPhrase,
+              })}
+            >
+              <NetworkStatus>
+                {isOnline => {
+                  if (this.hasSearchPhrase) {
+                    return (
+                      <TypedSearchResults
+                        renderOnError
+                        displayError={false}
+                        errorPolicy="all"
+                        variables={{ query: this.state.search }}
+                      >
+                        {({ data, error, loading }) => {
+                          if (this.hasResults(data)) {
+                            return (
+                              <>
+                                <ul>
+                                  {data.products.edges.map(product => (
+                                    <ProductItem
+                                      {...product}
+                                      key={product.node.id}
+                                    />
+                                  ))}
+                                </ul>
+                                <div className="search__products__footer">
+                                  {loading ? (
+                                    <Loader />
+                                  ) : (
+                                    <Button
+                                      testingContext="searchProductsButton"
+                                      btnRef={this.submitBtnRef}
+                                      type="submit"
+                                    >
+                                      <FormattedMessage defaultMessage="Show all results" />
+                                    </Button>
+                                  )}
+                                </div>
+                              </>
+                            );
+                          }
 
-                        return <NothingFound search={this.state.search} />;
-                      }}
-                    </TypedSearchResults>
-                  );
-                }
-                return null;
-              }}
-            </NetworkStatus>
+                          if (error) {
+                            return isOnline ? (
+                              <Error error={error.message} />
+                            ) : (
+                              <OfflinePlaceholder />
+                            );
+                          }
+
+                          return <NothingFound search={this.state.search} />;
+                        }}
+                      </TypedSearchResults>
+                    );
+                  }
+                  return null;
+                }}
+              </NetworkStatus>
+            </div>
           </div>
         </form>
       </Overlay>

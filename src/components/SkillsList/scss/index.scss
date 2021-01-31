@@ -1,0 +1,57 @@
+.skills-list {
+  padding: 2rem 0 4rem;
+  background-color: #efefef;
+}
+.images-overlap {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.images-overlap figure {
+  display: inline-block;
+  vertical-align: top;
+  margin: 0;
+  max-width: 100%;
+}
+.images-overlap img {
+  height: auto;
+  max-width: 100%;
+  vertical-align: top;
+}
+
+.skills-content {
+  margin-bottom: 2rem !important;
+  &_heading {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 1.2rem;
+  }
+   &__description {
+  margin-top: 2.4rem;
+  }
+  &_list-check {
+    margin-bottom: 3rem !important;
+    padding-left: 0;
+    list-style: none;
+    & li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 15px;
+    line-height: 1.5;
+      &:before {
+        content: '✓';  
+        position: absolute;
+        top: -0.3rem;
+        font-size: 20px;
+        left: 0;
+      }
+    }
+  }
+}
+
+.skills-overlap {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.skills-overlap-content {
+  position: relative;
+}

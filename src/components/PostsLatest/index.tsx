@@ -1,41 +1,32 @@
 import * as React from "react";
-import { Link } from "react-router-dom";
 
-import { Carousel, PostListItem } from "..";
-import { generatePostUrl, maybe } from "../../core/utils";
+import { PostListItem, Title } from "..";
+import { maybe } from "../../core/utils";
 import { TypedLatestPostsQuery } from "./queries";
-
 import "./scss/index.scss";
 
 interface PostsLatestProps {
   title?: string;
+  subTitle?: string;
 }
 
 const PostsLatest: React.FC<PostsLatestProps> = ({ title }) => {
   return (
     <TypedLatestPostsQuery displayError={false}>
       {({ data }) => {
-        const posts = maybe(
-          () => data.shop.homepageCollection.posts.edges,
-          []
-        );
-               console.log("psots ", posts);
-
+        const posts = maybe(() => data.posts.edges, []);
         if (posts.length) {
           return (
-            <div className="posts-featured">
+            <div className="posts-Latest">
               <div className="container">
-                <h3>{title}</h3>
-                <Carousel>
+                <Title title={title} subTitle="Latest post from our blog" />
+                <div className="row">
                   {posts.map(({ node: post }) => (
-                    <Link
-                      to={generatePostUrl(post.id, post.name)}
-                      key={post.id}
-                    >
+                    <div className="col-lg-4">
                       <PostListItem post={post} />
-                    </Link>
+                    </div>
                   ))}
-                </Carousel>
+                </div>
               </div>
             </div>
           );
@@ -48,6 +39,7 @@ const PostsLatest: React.FC<PostsLatestProps> = ({ title }) => {
 
 PostsLatest.defaultProps = {
   title: "Latest",
+  subTitle: "Latest post from our blog",
 };
 
 export default PostsLatest;

@@ -1,0 +1,23 @@
+@import "../../../globalStyles/scss/variables.scss";
+
+.services-list-item {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  text-align: center;
+
+  &__unit {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+
+    &_icon {
+      margin-right: 1.5rem !important;
+      & span {
+        font-size: 3rem;
+      }
+    }
+      & h3 {
+        font-size: 20px;
+      }
+  }
+}

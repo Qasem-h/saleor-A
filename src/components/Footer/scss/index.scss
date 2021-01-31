@@ -1,12 +1,19 @@
 @import "../../../globalStyles/scss/variables.scss";
 
 .footer {
+  background-color: $white;
+  padding: 50px 0 0;
+  border-top: 1px solid $gray-light;
   &__favicons {
     border-top: 1px solid $gray-light;
     display: flex;
     justify-content: center;
   }
-
+  &__copyright {
+    padding: 20px 0 20px 0;
+    text-align: center !important;
+    color: #8ca1b4 !important;
+  }
   &__menu {
     background-color: $gray-light;
     padding: $spacer * 3 0 $spacer * 2;
@@ -43,11 +50,7 @@
       }
     }
   }
-
   &-nav {
-    background-color: $gray-light;
-    padding: $spacer * 3 0 $spacer * 2;
-
     .container {
       display: flex;
       flex-wrap: wrap;
@@ -61,19 +64,32 @@
       &-header {
         font-weight: $bold-font-weight;
         margin-bottom: $spacer;
-        text-transform: uppercase;
+        text-transform: capitalize;
       }
 
       &-content {
         p {
           margin-bottom: $spacer;
           font-size: $small-font-size;
-          color: $gray;
-
+          color: $gray-dark;
+          text-align: justify;
           a {
             text-decoration: none;
-            color: $gray;
+            color: $gray-dark;
           }
+        }
+      }
+      &-contact-info {
+        margin-bottom: 24px;
+        svg {
+          text-align: left;
+          width: auto;
+          float: left;
+        }
+        p {
+          font-size: 16px;
+          color: $gray-dark;
+          padding-left: 40px;
         }
       }
     }

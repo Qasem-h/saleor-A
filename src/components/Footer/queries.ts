@@ -11,6 +11,10 @@ const secondaryMenu = gql`
       id
       name
     }
+    pategory {
+      id
+      name
+    }
     url
     collection {
       id

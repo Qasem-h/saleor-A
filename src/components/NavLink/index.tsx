@@ -2,6 +2,7 @@ import * as React from "react";
 import { Link } from "react-router-dom";
 
 import {
+  generatePategoryUrl,
   generateCategoryUrl,
   generateCollectionUrl,
   generatePageUrl,
@@ -21,7 +22,7 @@ interface NavLinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
     | SecondaryMenu_shop_navigation_secondary_items_children;
 }
 export const NavLink: React.FC<NavLinkProps> = ({ item, ...props }) => {
-  const { name, url, category, collection, page } = item;
+  const { name, url, pategory, category, collection, page } = item;
   const link = (url: string) => (
     <Link to={url} {...props}>
       {name}
@@ -37,6 +38,9 @@ export const NavLink: React.FC<NavLinkProps> = ({ item, ...props }) => {
   }
   if (category) {
     return link(generateCategoryUrl(category.id, category.name));
+  }
+  if (pategory) {
+    return link(generatePategoryUrl(pategory.id, pategory.name));
   }
   if (collection) {
     return link(generateCollectionUrl(collection.id, collection.name));

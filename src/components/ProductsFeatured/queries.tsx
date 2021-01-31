@@ -11,19 +11,14 @@ export const featuredProducts = gql`
   ${basicProductFragment}
   ${productPricingFragment}
   query FeaturedProducts {
-    shop {
-      homepageCollection {
-        id
-        products(first: 50) {
-          edges {
-            node {
-              ...BasicProductFields
-              ...ProductPricingField
-              category {
-                id
-                name
-              }
-            }
+    products(first: 4) {
+      edges {
+        node {
+          ...BasicProductFields
+          ...ProductPricingField
+          category {
+            id
+            name
           }
         }
       }

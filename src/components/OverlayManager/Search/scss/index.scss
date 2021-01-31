@@ -3,7 +3,72 @@
 $drawer-width: 25rem;
 
 .search {
-  width: 100vw;
+  width: 100%;
+  height: auto;
+  padding-bottom: 0;
+  &_search-group {
+    position: relative;
+    max-width: 768px;
+    margin: 0 auto 30px;
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid currentColor;
+    &__icon {
+      left: 0;
+      margin: 0;
+      width: 20px;
+      height: 20px;
+      opacity: 0.5;
+      display: flex;
+      align-items: center;
+    }
+  }
+  &_side-panel {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    max-height: 280px;
+    width: 100%;
+    z-index: 600;
+    padding: 0;
+    background: #fff;
+    right: 0;
+    will-change: transform;
+    -webkit-transition: opacity 0.25s ease, ease;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+    &_headerr {
+      background: 0 0;
+      height: auto;
+      border: 0;
+      padding: 0;
+      justify-content: flex-end;
+      padding: 50px 0 20px;
+      font-size: 1.1em;
+      &-inner {
+        padding: 50px 0 20px;
+        font-size: 1.1em;
+        background: 0 0;
+        height: auto;
+        border: 0;
+        padding: 0;
+        justify-content: flex-end;
+        &-remove {
+          float: right;
+          border-radius: 50%;
+          background: #f3f3f3;
+          border: 9px solid transparent;
+          color: #777;
+          width: 45px;
+          height: 45px;
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          position: relative;
+        }
+      }
+    }
+  }
 
   @media (min-width: $medium-screen) {
     width: $drawer-width;
@@ -31,7 +96,6 @@ $drawer-width: 25rem;
     }
 
     .input__field {
-      background-color: $turquoise-light;
       border: none;
       box-shadow: none;
       padding-bottom: 1.2rem;
@@ -43,7 +107,7 @@ $drawer-width: 25rem;
       }
 
       &::placeholder {
-        text-transform: uppercase;
+        text-transform: capitalize;
         font-size: $base-font-size;
         color: $black;
       }
@@ -88,7 +152,7 @@ $drawer-width: 25rem;
       }
 
       h4 {
-        text-transform: uppercase;
+        text-transform: capitalize;
         font-weight: $bold-font-weight;
         padding: $spacer / 4 0;
         color: $base-font-color;

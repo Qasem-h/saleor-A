@@ -15,6 +15,15 @@ export interface MainMenu_shop_navigation_main_items_category {
   name: string;
 }
 
+export interface MainMenu_shop_navigation_main_items_pategory {
+  __typename: "Pategory";
+  /**
+   * The ID of the object.
+   */
+  id: string;
+  name: string;
+}
+
 export interface MainMenu_shop_navigation_main_items_collection {
   __typename: "Collection";
   /**
@@ -39,6 +48,15 @@ export interface MainMenu_shop_navigation_main_items_parent {
 
 export interface MainMenu_shop_navigation_main_items_children_category {
   __typename: "Category";
+  /**
+   * The ID of the object.
+   */
+  id: string;
+  name: string;
+}
+
+export interface MainMenu_shop_navigation_main_items_children_pategory {
+  __typename: "Pategory";
   /**
    * The ID of the object.
    */
@@ -77,6 +95,15 @@ export interface MainMenu_shop_navigation_main_items_children_children_category 
   name: string;
 }
 
+export interface MainMenu_shop_navigation_main_items_children_children_pategory {
+  __typename: "Pategory";
+  /**
+   * The ID of the object.
+   */
+  id: string;
+  name: string;
+}
+
 export interface MainMenu_shop_navigation_main_items_children_children_collection {
   __typename: "Collection";
   /**
@@ -107,6 +134,7 @@ export interface MainMenu_shop_navigation_main_items_children_children {
   id: string;
   name: string;
   category: MainMenu_shop_navigation_main_items_children_children_category | null;
+  pategory: MainMenu_shop_navigation_main_items_children_children_pategory | null;
   /**
    * URL to the menu item.
    */
@@ -124,6 +152,7 @@ export interface MainMenu_shop_navigation_main_items_children {
   id: string;
   name: string;
   category: MainMenu_shop_navigation_main_items_children_category | null;
+  pategory: MainMenu_shop_navigation_main_items_children_pategory | null;
   /**
    * URL to the menu item.
    */
@@ -142,6 +171,7 @@ export interface MainMenu_shop_navigation_main_items {
   id: string;
   name: string;
   category: MainMenu_shop_navigation_main_items_category | null;
+  pategory: MainMenu_shop_navigation_main_items_pategory | null;
   /**
    * URL to the menu item.
    */

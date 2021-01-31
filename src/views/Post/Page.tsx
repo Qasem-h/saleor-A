@@ -23,14 +23,12 @@ const populateBreadcrumbs = post => [
   },
 ];
 
-const Page: React.FC< IProps > = ({post}) => {
+const Page: React.FC<IProps> = ({ post }) => {
   const postGallery: React.RefObject<HTMLDivElement> = React.useRef();
 
   const getImages = () => {
     if (post.variants && variantId) {
-      const variant = post.variants.find(
-        variant => variant.id === variantId
-      );
+      const variant = post.variants.find(variant => variant.id === variantId);
 
       if (variant.images.length > 0) {
         return variant.images;
@@ -58,14 +56,10 @@ const Page: React.FC< IProps > = ({post}) => {
                 </>
               ) : (
                 <>
-                  <div
-                    className="post-page__post__gallery"
-                    ref={postGallery}
-                  >
+                  <div className="post-page__post__gallery" ref={postGallery}>
                     <PostGallery images={getImages()} />
                   </div>
-                  <div className="post-page__post__info">
-                  </div>
+                  <div className="post-page__post__info" />
                 </>
               )
             }
@@ -73,9 +67,7 @@ const Page: React.FC< IProps > = ({post}) => {
         </div>
       </div>
       <div className="container">
-        <div className="post-page__post__description">
-          {post.contentJson}
-        </div>
+        <div className="post-page__post__description">{post.contentJson}</div>
       </div>
       <OtherPosts posts={post.pategory.posts.edges} />
     </div>

@@ -14,7 +14,7 @@ import {
   Online,
   OverlayContext,
   OverlayTheme,
-  OverlayType
+  OverlayType,
 } from "..";
 import * as appPaths from "../../app/routes";
 import { maybe } from "../../core/utils";
@@ -29,7 +29,7 @@ import searchImg from "../../images/search.svg";
 import userImg from "../../images/user.svg";
 import {
   mediumScreen,
-  smallScreen
+  smallScreen,
 } from "../../globalStyles/scss/variables.scss";
 import "./scss/index.scss";
 
@@ -48,7 +48,7 @@ const MainMenu: React.FC = () => {
       items.reduce((prevVal, currVal) => prevVal + currVal.quantity, 0)) ||
     0;
 
-  const [activeDropdown, setActiveDropdown] = useState < string > (undefined);
+  const [activeDropdown, setActiveDropdown] = useState<string>(undefined);
 
   useEffect(() => {
     if (activeDropdown) {
@@ -71,11 +71,11 @@ const MainMenu: React.FC = () => {
   };
 
   return (
-      <header
-        className={classNames({
-          "header-with-dropdown": !!activeDropdown
-        })}
-      >
+    <header
+      className={classNames({
+        "header-with-dropdown": !!activeDropdown,
+      })}
+    >
       <div className="container-fluid">
         <nav className="main-menu" id="header">
           <div className="main-menu__left">
@@ -191,7 +191,7 @@ const MainMenu: React.FC = () => {
                                 onClick={() =>
                                   overlayContext.show(
                                     OverlayType.login,
-                                    OverlayTheme.left
+                                    OverlayTheme.modal
                                   )
                                 }
                               >
@@ -267,7 +267,7 @@ const MainMenu: React.FC = () => {
                           onClick={() =>
                             overlayContext.show(
                               OverlayType.login,
-                              OverlayTheme.right
+                              OverlayTheme.modal
                             )
                           }
                         >
@@ -308,7 +308,7 @@ const MainMenu: React.FC = () => {
                 data-test="menuSearchOverlayLink"
                 className="main-menu__icon main-menu__search"
                 onClick={() =>
-                  overlayContext.show(OverlayType.search, OverlayTheme.right)
+                  overlayContext.show(OverlayType.search, OverlayTheme.top)
                 }
               >
                 <ReactSVG path={searchImg} />
@@ -317,7 +317,7 @@ const MainMenu: React.FC = () => {
           </div>
         </nav>
       </div>
-      </header>
+    </header>
   );
 };
 

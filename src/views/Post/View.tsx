@@ -16,11 +16,7 @@ import { TypedPostDetailsQuery } from "./queries";
 import { IProps } from "./types";
 
 const canDisplay = (post: PostDetails_post) =>
-  maybe(
-    () =>
-      !!post.contentJson &&
-      !!post.title
-  );
+  maybe(() => !!post.contentJson && !!post.title);
 const extractMeta = (post: PostDetails_post) => ({
   custom: [
     {
@@ -34,7 +30,6 @@ const extractMeta = (post: PostDetails_post) => ({
   type: "post.item",
   url: window.location.href,
 });
-
 
 const View: React.FC<RouteComponentProps<{ id: string }>> = ({ match }) => {
   return (
@@ -53,7 +48,7 @@ const View: React.FC<RouteComponentProps<{ id: string }>> = ({ match }) => {
             if (canDisplay(post)) {
               return (
                 <MetaWrapper meta={extractMeta(post)}>
-                <div> hiiii </div>
+                  <div> {post.seoTitle} </div>
                 </MetaWrapper>
               );
             }

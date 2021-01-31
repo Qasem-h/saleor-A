@@ -3,7 +3,7 @@ import { styled } from "@styles";
 export const AddToCartSelection = styled.div``;
 
 export const ProductNameHeader = styled.h3`
-  text-transform: uppercase;
+  text-transform: capitalize;
   font-weight: ${props => props.theme.typography.boldFontWeight};
   margin-bottom: ${props => props.theme.spacing.spacer};
 `;

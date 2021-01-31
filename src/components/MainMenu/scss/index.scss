@@ -5,16 +5,17 @@
 }
 
 .main-menu {
-  font-size: 12px;
+  font-size: 14px;
   align-items: center;
   align-items: stretch;
   background-color: $white;
   border-bottom: 1px solid $gray-light;
   display: flex;
   flex-direction: row;
-  height: 6rem;
+  height: 90px;
   position: relative;
-
+  text-transform: capitalize;
+  
   &__left {
     flex-basis: calc(50% - 2rem);
 
@@ -57,18 +58,31 @@
   }
 
   &__item {
-    font-weight: $bold-font-weight;
     height: 100%;
-    text-transform: uppercase;
-
+    text-transform: capitalize;
     a {
       text-decoration: none;
       color: $base-font-color;
       position: relative;
       transition: 0.3s;
-
-      &:hover {
-        color: $turquoise;
+      &:before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        bottom: -5px;
+        left: 0;
+        background-color: currentColor;
+        visibility: hidden;
+        -webkit-transform: scaleX(0);
+        transform: scaleX(0);
+        -webkit-transition: $a-li-transition;
+        transition: $a-li-transition;
+      }
+      &:hover:before {
+        visibility: visible;
+        -webkit-transform: scaleX(1);
+        transform: scaleX(1);
       }
     }
   }
@@ -131,7 +145,6 @@
       border-left: 1px solid $gray-light;
     }
 
-
     &__quantity {
       position: absolute;
       top: -0.3rem;
@@ -149,12 +162,8 @@
     }
   }
 
-  &__user {
- 
-  }
-
   &__dropdown {
-    text-transform: uppercase;
+    text-transform: capitalize;
     font-weight: $bold-font-weight;
 
     li {
@@ -176,7 +185,7 @@
     padding: $spacer;
 
     span {
-      text-transform: uppercase;
+      text-transform: capitalize;
       font-weight: $bold-font-weight;
       vertical-align: bottom;
     }
@@ -201,7 +210,7 @@
     }
 
     span {
-      text-transform: uppercase;
+      text-transform: capitalize;
       font-weight: $bold-font-weight;
       margin-right: $spacer;
     }
@@ -217,9 +226,9 @@
 
   &__nav-dropdown {
     padding: 0 0.8rem;
-
+    
     &--active {
-      background-color: $turquoise-light;
+      background-color: $white;
     }
 
     & > li:first-child {
@@ -228,7 +237,7 @@
 
     &__body {
       background: $white;
-      border-top-color: $red-dark;
+      border-top-color: #efefef;
       border-top-style: solid;
       border-top-width: 1px;
       display: none;
@@ -238,7 +247,7 @@
       top: 100%;
       width: auto;
       z-index: 3;
-      
+
       &--visible {
         display: block;
       }
@@ -258,7 +267,7 @@
         > a {
           font-size: $base-font-size;
           position: relative;
-          text-transform: uppercase;
+          text-transform: capitalize;
           padding-bottom: 9px;
           margin-bottom: 3px;
         }

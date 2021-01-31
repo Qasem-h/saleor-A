@@ -69,7 +69,7 @@ exports[`Storyshots @components/atoms/DemoBanner default 1`] = `
 
 .c6 {
   color: #036DFF;
-  text-transform: uppercase;
+  text-transform: capitalize;
   font-weight: 600;
 }
 

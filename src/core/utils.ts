@@ -54,7 +54,7 @@ export const priceToString = (
   return `${price.currency} ${amount.toFixed(2)}`;
 };
 
-export const generatePostUrl = (id: string, name: string) =>
+export const generatePostUrl = (id: string, title: string) =>
   `/post/${slugify(title)}/${getDBIdFromGraphqlId(id, "Post")}/`;
 
 export const generatePategoryUrl = (id: string, name: string) =>

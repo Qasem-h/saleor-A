@@ -15,6 +15,15 @@ export interface SecondaryMenuSubItem_category {
   name: string;
 }
 
+export interface SecondaryMenuSubItem_pategory {
+  __typename: "Pategory";
+  /**
+   * The ID of the object.
+   */
+  id: string;
+  name: string;
+}
+
 export interface SecondaryMenuSubItem_collection {
   __typename: "Collection";
   /**
@@ -37,6 +46,7 @@ export interface SecondaryMenuSubItem {
   id: string;
   name: string;
   category: SecondaryMenuSubItem_category | null;
+  pategory: SecondaryMenuSubItem_pategory | null;
   /**
    * URL to the menu item.
    */

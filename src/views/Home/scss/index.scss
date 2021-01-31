@@ -9,7 +9,7 @@ h3.h3 {
 }
 .product-grid4 {
   position: relative;
-  font-family: Poppins,sans-serif;
+  font-family: 'Jost' ,sans-serif;
   text-align: center;
   border-radius: 5px;
   overflow: hidden;
@@ -148,7 +148,7 @@ h3.h3 {
     background-color: #16a085;
     font-size: 13px;
     font-weight: 800;
-    text-transform: uppercase;
+    text-transform: capitalize;
     line-height: 45px;
     height: 45px;
     width: 45px;
@@ -166,7 +166,7 @@ h3.h3 {
     background-color: #16a085;
     font-size: 13px;
     font-weight: 800;
-    text-transform: uppercase;
+    text-transform: capitalize;
     line-height: 45px;
     height: 45px;
     width: 45px;
@@ -225,7 +225,7 @@ h3.h3 {
   }
 }
 .product-grid8 {
-  font-family: Poppins,sans-serif;
+  font-family: 'Jost',sans-serif;
   position: relative;
   z-index: 1;
   .product-image8 {
@@ -375,7 +375,7 @@ h3.h3 {
     font-size: 15px;
     letter-spacing: 1px;
     text-align: center;
-    text-transform: uppercase;
+    text-transform: capitalize;
     padding: 22px 5px;
     transition: all .5s ease 0s;
     .icon {
@@ -443,7 +443,7 @@ h3.h3 {
         display: inline-block;
         transform: skew(-45deg);
         font-weight: $bold-font-weight;
-        text-transform: uppercase;
+        text-transform: capitalize;
         color: $blue;
         font-size: $h1-font-size;
         font-weight: 900;
@@ -463,7 +463,7 @@ h3.h3 {
     margin-bottom: 2rem;
 
     h3 {
-      text-transform: uppercase;
+      text-transform: capitalize;
       font-weight: $bold-font-weight;
       margin-bottom: 1rem;
     }
@@ -492,7 +492,7 @@ h3.h3 {
         color: $base-font-color;
 
         h3 {
-          text-transform: uppercase;
+          text-transform: capitalize;
           font-weight: $bold-font-weight;
 
           &:after {

@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 import { RichTextContent } from "@components/atoms";
 import { Breadcrumb, Breadcrumbs } from "../../components";
+import breadcrumbBackgroundImage from "../../images/breadcrumb-bg.jpg";
 
 interface PageNavigationElement {
   active: boolean;
@@ -20,6 +21,14 @@ interface PageProps {
     title: string;
   };
 }
+const defaultBackgroundImage = {
+  backgroundImage: `url(${breadcrumbBackgroundImage})`,
+  backgroundPosition: "left top",
+  backgroundSize: "auto",
+  backgroundRepeat: "repeat",
+  backgroundAttachment: "fixed",
+};
+
 export const Page: React.FC<PageProps> = ({
   breadcrumbs,
   headerImage,
@@ -29,14 +38,26 @@ export const Page: React.FC<PageProps> = ({
   <div className="article-page">
     <div
       className="article-page__header"
-      style={headerImage ? { backgroundImage: `url(${headerImage})` } : null}
+      style={
+        headerImage
+          ? { backgroundImage: `url(${headerImage})` }
+          : defaultBackgroundImage
+      }
     >
-      <span className="article-page__header__title">
-        <h1>{page.title}</h1>
-      </span>
+      <div className="container">
+        <div className="row">
+          <div className="col-lg-12">
+            <span className="article-page__header__title">
+              <h1>{page.title}</h1>
+            </span>
+            <span className="article-page__header__breadcrumb">
+              <Breadcrumbs breadcrumbs={breadcrumbs} />
+            </span>
+          </div>
+        </div>
+      </div>
     </div>
     <div className="container">
-      <Breadcrumbs breadcrumbs={breadcrumbs} />
       <div className="article-page__container">
         <div className="article-page__navigation">
           <ul>

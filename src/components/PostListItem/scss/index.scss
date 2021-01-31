@@ -1,0 +1,59 @@
+@import "../../../globalStyles/scss/variables.scss";
+
+.post-list-item {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  text-align: center; 
+
+  &__post-body {
+    box-shadow: 0 0 30px rgba(31, 45, 61, 0.125);
+    border-radius: 5px;
+    background: #ffffff;
+    padding: 20px;
+    margin: -30px 20px 0;
+    position: relative;
+    min-height: 160px;
+
+    &_title {
+      font-size: 22px;
+      font-weight: 500;
+      margin: 0 0 10px;
+    }
+    &_btn-bar {
+      margin-top: 20px;
+      & a {
+        display: inline-block;
+        color: #111111;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 4px;
+        text-transform: capitalize;
+        padding: 3px 0;
+        position: relative;
+      }
+    }
+  }
+
+  &__image {
+    // background-color: $turquoise-light;
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden;
+    img {
+      object-fit: contain;
+      max-width: 100%;
+    }
+    &__date {
+      position: absolute;
+      background: #3a3973;
+      color: #ffffff;
+      padding: 8px 15px;
+      left: 0;
+      top: 10px;
+      font-size: 14px;
+    }
+    @media (max-width: $small-screen) {
+      height: 210px;
+    }
+  }
+}

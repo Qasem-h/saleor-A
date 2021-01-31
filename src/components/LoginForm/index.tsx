@@ -4,7 +4,6 @@ import * as React from "react";
 import { useIntl } from "react-intl";
 
 import { useAuth } from "@saleor/sdk";
-import { demoMode } from "@temp/constants";
 import { commonMessages } from "@temp/intl";
 
 import { Button, Form, TextField } from "..";
@@ -31,18 +30,11 @@ const LoginForm: React.FC<ILoginForm> = ({ hide }) => {
     }
   };
 
-  const formData = demoMode
-    ? {
-        email: "admin@example.com",
-        password: "admin",
-      }
-    : {};
-
   const intl = useIntl();
 
   return (
     <div className="login-form">
-      <Form data={formData} errors={errors || []} onSubmit={handleOnSubmit}>
+      <Form errors={errors || []} onSubmit={handleOnSubmit}>
         <TextField
           name="email"
           autoComplete="email"

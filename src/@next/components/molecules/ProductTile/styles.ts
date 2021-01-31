@@ -24,7 +24,7 @@ export const Wrapper = styled.div`
 `;
 
 export const Title = styled.h4`
-  text-transform: uppercase;
+  text-transform: capitalize;
   font-weight: normal;
   ${textProps}
 `;

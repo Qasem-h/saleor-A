@@ -1,17 +1,17 @@
 // colors
 $base-font-color: #323232;
 $black: #000;
-$blue-dark: #190c4e;
-$blue: #21125e;
-$gray-dark: #7d7d7d;
-$gray-light: #f6f6f6; //this is removed dfrom top menu
-$red-dark: #7d0303;
-$gray: #c4c4c4;
-$green: #3ed256;
-$rose: #fe6e76;
-$turquoise-dark: #55c4b3;
+$blue-dark: #2e1690;
+$blue: #04ccff;
+$gray-dark: #707070;
+$gray-light: #e9e9e9;
+$red-dark: #190101;
+$gray: #ababab;
+$green: #3ed2a0;
+$rose: #fd222e;
+$turquoise-dark: #359889;
 $turquoise-light: #f1f5f5;
-$turquoise: #51e9d2;
+$turquoise: #7ec8ef;
 $white: #fff;
 $blue-overlay: rgba($blue, 0.15);
 $autofillColor: rgb(250, 255, 189);
@@ -19,7 +19,7 @@ $autofillColorSelected: rgb(232, 240, 254);
 $darkGreen: #06847b;
 
 // typography
-$base-font-family: "Inter", sans-serif;
+$base-font-family: 'Jost','Segoe UI',Arial,sans-serif;
 $base-font-size: 1rem; // 16px
 $small-font-size: 0.875rem; // 14px
 $base-line-height: 1.25rem; // 20px
@@ -46,7 +46,7 @@ $button-padding-small-screen: 0.9rem 1rem;
 $button-transition: 0.3s;
 $button-transform: skew(45deg);
 $button-content-transform: skew(-45deg);
-$button-text-transform: uppercase;
+$button-text-transform: capitalize;
 $button-font-weight: $bold-font-weight;
 
 // input
@@ -71,7 +71,7 @@ $message-title-margin: 0 $spacer * 1.5 0 0;
 $message-content-margin: $spacer 0 0;
 
 // product item
-$product-item-title-text-transform: uppercase;
+$product-item-title-text-transform: capitalize;
 $product-item-title-font-weight: $bold-font-weight;
 $product-item-title-margin: $spacer / 2 0 0;
 $product-item-title-height: 2.5rem;
@@ -98,3 +98,5 @@ $modal-min-height: 455px;
   mediumScreen: $medium-screen;
   smallScreen: $small-screen;
 }
+
+$a-li-transition: all 0.5s cubic-bezier(1, 0.25, 0, 0.75) 0s;
