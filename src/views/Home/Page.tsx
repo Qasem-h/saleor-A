@@ -47,15 +47,15 @@ const Page: React.FC<{
           defaultMessage: "We will do it in the best way",
         })}
       />
+      <ProductsFeatured
+        title={intl.formatMessage({ defaultMessage: "New Arrivals" })}
+        subTitle={intl.formatMessage({ defaultMessage: "It’s All New" })}
+      />
       <SkillsList
         title={intl.formatMessage({ defaultMessage: "Our Expertise" })}
         subTitle={intl.formatMessage({
           defaultMessage: "We will do it in the best way",
         })}
-      />
-      <ProductsFeatured
-        title={intl.formatMessage({ defaultMessage: "New Arrivals" })}
-        subTitle={intl.formatMessage({ defaultMessage: "It’s All New" })}
       />
       <ServicesList
         title={intl.formatMessage({ defaultMessage: "We Offer Services" })}

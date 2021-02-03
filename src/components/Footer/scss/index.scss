@@ -36,6 +36,7 @@
       }
 
       &-content {
+         padding-left: 10px;
         p {
           font-weight: $bold-font-weight;
           margin-bottom: $spacer;
@@ -61,6 +62,9 @@
     }
 
     &__section {
+      min-height: 1px;
+      padding-right: 15px;
+      padding-left: 15px;
       &-header {
         font-weight: $bold-font-weight;
         margin-bottom: $spacer;
@@ -68,6 +72,8 @@
       }
 
       &-content {
+        padding-right: 8px;
+        padding-left: 8px;
         p {
           margin-bottom: $spacer;
           font-size: $small-font-size;

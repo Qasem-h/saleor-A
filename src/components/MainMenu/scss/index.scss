@@ -5,7 +5,7 @@
 }
 
 .main-menu {
-  font-size: 14px;
+  font-size: 16px;
   align-items: center;
   align-items: stretch;
   background-color: $white;
@@ -60,11 +60,13 @@
   &__item {
     height: 100%;
     text-transform: capitalize;
+    font-weight: 600;
     a {
       text-decoration: none;
       color: $base-font-color;
       position: relative;
       transition: 0.3s;
+      font-weight: 600;
       &:before {
         content: "";
         position: absolute;
