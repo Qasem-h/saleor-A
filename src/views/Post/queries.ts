@@ -1,6 +1,6 @@
 import gql from "graphql-tag";
 import { TypedQuery } from "../../core/queries";
-import { PostDetails } from "./gqlTypes/PostDetails";
+import { PostDetails, PostDetailsVariables } from "./gqlTypes/PostDetails";
 
 export const basicPostFragment = gql`
   fragment BasicPostFields on Post {
@@ -51,7 +51,7 @@ export const postFragment = gql`
 
 export const postDetailsQuery = gql`
   ${basicPostFragment}
-  query PostDetails($id: ID!, $countryCode: CountryCode) {
+  query PostDetails($id: ID!) {
     post(id: $id) {
       ...BasicPostFields
       contentJson

@@ -13,7 +13,7 @@ import { PategoryPage } from "../../views/Pategory";
 import { CollectionPage } from "../../views/Collection";
 import { HomePage } from "../../views/Home";
 import { ProductPage } from "../../views/Product";
-// import { PostPage } from "../../views/Post";
+import { PostPage } from "../../views/Post";
 import { SearchPage } from "../../views/Search";
 import { BlogPage } from "../../views/Blog";
 
@@ -28,6 +28,7 @@ export const Routes: React.FC = () => (
     <Route path={paths.pategoryUrl} component={PategoryPage} />
     <Route path={paths.collectionUrl} component={CollectionPage} />
     <Route path={paths.productUrl} component={ProductPage} />
+    <Route path={paths.postUrl} component={PostPage} />
     <Route path={paths.cartUrl} component={CartPage} />
     <Route path={paths.checkoutLoginUrl} component={CheckoutLogin} />
     <Route path={paths.pageUrl} component={ArticlePage} />

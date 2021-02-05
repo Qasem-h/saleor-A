@@ -6,6 +6,7 @@ export const categoryUrl = `${baseUrl}category/${slugUrl}`;
 export const pategoryUrl = `${baseUrl}pategory/${slugUrl}`;
 export const collectionUrl = `${baseUrl}collection/${slugUrl}`;
 export const productUrl = `${baseUrl}product/${slugUrl}`;
+export const postUrl = `${baseUrl}post/${slugUrl}`;
 export const cartUrl = `${baseUrl}cart/:token?/`;
 export const checkoutLoginUrl = `${baseUrl}login/`;
 export const pageUrl = `${baseUrl}page/:slug/`;

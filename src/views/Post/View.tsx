@@ -1,10 +1,7 @@
 import "./scss/index.scss";
 
-import { isEmpty } from "lodash";
-import queryString from "query-string";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { RouteComponentProps } from "react-router";
-import { useHistory } from "react-router-dom";
 
 import { Loader } from "@components/atoms";
 import { MetaWrapper, NotFound, OfflinePlaceholder } from "../../components";
@@ -13,7 +10,7 @@ import { getGraphqlIdFromDBId, maybe } from "../../core/utils";
 import { PostDetails_post } from "./gqlTypes/PostDetails";
 import Page from "./Page";
 import { TypedPostDetailsQuery } from "./queries";
-import { IProps } from "./types";
+// import { IProps } from "./types";
 
 const canDisplay = (post: PostDetails_post) =>
   maybe(() => !!post.contentJson && !!post.title);
@@ -27,7 +24,6 @@ const extractMeta = (post: PostDetails_post) => ({
   content: post.seoDescription || post.contentJson,
   image: post?.thumbnail?.url || null,
   title: post.seoTitle || post.title,
-  type: "post.item",
   url: window.location.href,
 });
 
@@ -48,7 +44,7 @@ const View: React.FC<RouteComponentProps<{ id: string }>> = ({ match }) => {
             if (canDisplay(post)) {
               return (
                 <MetaWrapper meta={extractMeta(post)}>
-                  <div> {post.seoTitle} </div>
+                  <Page post={post} />
                 </MetaWrapper>
               );
             }

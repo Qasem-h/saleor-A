@@ -2,6 +2,8 @@
 /* eslint-disable */
 // This file was automatically generated and should not be edited.
 
+import { CountryCode } from "./../../../../gqlTypes/globalTypes";
+
 // ====================================================
 // GraphQL fragment: PostDetails
 // ====================================================
@@ -114,7 +116,7 @@ export interface PostDetails_images {
   url: string;
 }
 
-export interface PostDetails {
+export interface PostDetails_post {
   __typename: "Post";
   /**
    * The ID of the object.
@@ -124,6 +126,10 @@ export interface PostDetails {
   publicationDate: any | null;
   content: string;
   contentJson: any;
+  
+  seoDescription: string | null;
+  seoTitle: string | null;
+
   pategory: PostDetails_pategory | null;
   /**
    * The main thumbnail for a post.
@@ -137,4 +143,19 @@ export interface PostDetails {
    * List of images for the post.
    */
   images: (PostDetails_images | null)[] | null;
+}
+
+export interface PostDetails {
+  /**
+   * Look up a post by ID.
+   */
+  post: PostDetails_post | null;
+}
+
+
+
+
+export interface PostDetailsVariables {
+  id: string;
+  countryCode?: CountryCode | null;
 }

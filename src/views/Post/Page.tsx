@@ -1,76 +1,77 @@
-import classNames from "classnames";
+// import classNames from "classnames";
 import React from "react";
-import Media from "react-media";
-import { PostDescription } from "@components/molecules";
-import { PostGallery } from "@components/organisms";
-import { smallScreen } from "../../globalStyles/scss/variables.scss";
+// import Media from "react-media";
+import { PostContnet } from "@components/molecules";
+import { PostImage } from "@components/organisms";
+// import { smallScreen } from "../../globalStyles/scss/variables.scss";
 
-import { generateCategoryUrl, generatePostUrl } from "../../core/utils";
-import GalleryCarousel from "./GalleryCarousel";
+// import { generateCategoryUrl, generatePostUrl } from "../../core/utils";
 import OtherPosts from "./Other";
 
 import { structuredData } from "../../core/SEO/Post/structuredData";
 import { IProps } from "./types";
+import { Post } from "../../../../byso-dashboard/src/fragments/types/Post";
+import breadcrumbBackgroundImage from "../../images/breadcrumb-bg.jpg";
 
-const populateBreadcrumbs = post => [
-  {
-    link: generateCategoryUrl(post.pategory.id, post.pategory.name),
-    value: post.pategory.name,
-  },
-  {
-    link: generatePostUrl(post.id, post.name),
-    value: post.name,
-  },
-];
 
-const Page: React.FC<IProps> = ({ post }) => {
-  const postGallery: React.RefObject<HTMLDivElement> = React.useRef();
-
+const Page: React.FC<IProps> = ({ post }): JSX.Element => {
+  // const postGallery: React.RefObject<HTMLDivElement> = React.useRef();
+  const defaultBackgroundImage = {
+    backgroundImage: `url(${breadcrumbBackgroundImage})`,
+    backgroundPosition: "left top",
+    backgroundSize: "auto",
+    backgroundRepeat: "repeat",
+    backgroundAttachment: "fixed",
+  };
   const getImages = () => {
-    if (post.variants && variantId) {
-      const variant = post.variants.find(variant => variant.id === variantId);
-
-      if (variant.images.length > 0) {
-        return variant.images;
-      }
-    }
-
     return post.images;
   };
-
   return (
-    <div className="post-page">
-      <div className="container">
-        <Breadcrumbs breadcrumbs={populateBreadcrumbs(post)} />
-      </div>
-      <div className="container">
-        <div className="post-page__post">
-          <script className="structured-data-list" type="application/ld+json">
-            {structuredData(post)}
-          </script>
-          <Media query={{ maxWidth: smallScreen }}>
-            {matches =>
-              matches ? (
-                <>
-                  <GalleryCarousel images={getImages()} />
-                </>
-              ) : (
-                <>
-                  <div className="post-page__post__gallery" ref={postGallery}>
-                    <PostGallery images={getImages()} />
-                  </div>
-                  <div className="post-page__post__info" />
-                </>
-              )
-            }
-          </Media>
+    <>
+      <div
+        className="article-page__header"
+        style={defaultBackgroundImage && defaultBackgroundImage}
+      >
+        <div className="container">
+          <div className="row">
+            <div className="col-md-12 col-lg-12 col-xl-12">
+              <span className="article-page__header__title">
+                <h1>{post.title}</h1>
+              </span>
+            </div>
+          </div>
         </div>
       </div>
-      <div className="container">
-        <div className="post-page__post__description">{post.contentJson}</div>
+      <div className="post-page">
+        <div className="container">
+          <div className="post-page__post">
+            <script className="structured-data-list" type="application/ld+json">
+              {structuredData(post)}
+            </script>
+            <div className="post-page_mx-auto" style={{ maxWidth: "980px" }}>
+              <PostImage images={getImages()} />
+            </div>
+          </div>
+        </div>
+        <div className="post-page_mx-auto" style={{ maxWidth: "840px" }}>
+          <div className="container">
+            <div className="row">
+              <div className="col-md-12 col-lg-10 col-xl-10">
+                <div className="post-page__post__title"> {post.title}</div>
+              </div>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-md-12 col-lg-12 col-xl-12">
+              <div className="post-page__post__content">
+                <PostContnet contentJson={post.contentJson} />
+              </div>
+            </div>
+          </div>
+        </div>
+        <OtherPosts posts={post.pategory.posts.edges} />
       </div>
-      <OtherPosts posts={post.pategory.posts.edges} />
-    </div>
+    </>
   );
 };
 
