@@ -1,18 +1,13 @@
-// import classNames from "classnames";
 import React from "react";
-// import Media from "react-media";
 import { PostContnet } from "@components/molecules";
 import { PostImage } from "@components/organisms";
-// import { smallScreen } from "../../globalStyles/scss/variables.scss";
 
-// import { generateCategoryUrl, generatePostUrl } from "../../core/utils";
 import OtherPosts from "./Other";
 
 import { structuredData } from "../../core/SEO/Post/structuredData";
 import { IProps } from "./types";
-import { Post } from "../../../../byso-dashboard/src/fragments/types/Post";
+// import { Post } from "../../../../byso-dashboard/src/fragments/types/Post";
 import breadcrumbBackgroundImage from "../../images/breadcrumb-bg.jpg";
-
 
 const Page: React.FC<IProps> = ({ post }): JSX.Element => {
   // const postGallery: React.RefObject<HTMLDivElement> = React.useRef();

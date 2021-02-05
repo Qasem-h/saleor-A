@@ -262,6 +262,12 @@ export enum CountryCode {
   ZW = "ZW",
 }
 
+export enum LanguageCodeEnum {
+  AR = "AR",
+  EN = "EN",
+  FA = "FA",
+}
+
 export enum OrderDirection {
   ASC = "ASC",
   DESC = "DESC",

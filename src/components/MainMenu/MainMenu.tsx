@@ -32,9 +32,13 @@ import {
   smallScreen,
 } from "../../globalStyles/scss/variables.scss";
 import "./scss/index.scss";
+import useLocale from "../../hooks/useLocale";
+import { LanguageCodeEnum } from "../../../gqlTypes/globalTypes";
+import LanguageSwitch from "../LanguageSwitch";
 
 const MainMenu: React.FC = () => {
   const overlayContext = useContext(OverlayContext);
+  const { locale, setLocale } = useLocale();
 
   const { user, signOut } = useAuth();
   const { items } = useCart();
@@ -290,6 +294,12 @@ const MainMenu: React.FC = () => {
                       {cartItemsQuantity}
                     </span>
                   ) : null}
+                </li>
+                <li
+                  data-test="menuCartOverlayLink"
+                  className="main-menu__icon main-menu__cart"
+                >
+                  <LanguageSwitch locale={locale} onLocaleChange={setLocale} />
                 </li>
               </Online>
               <Offline>

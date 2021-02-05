@@ -1,11 +1,11 @@
 import React from "react";
 import { IntlProvider } from "react-intl";
-
-import locale_AR from "@locale/ar.json";
+import useLocalStorage from "../../hooks/useLocalStorage";
 
 export enum Locale {
-  EN = "en",
   AR = "ar",
+  EN = "en",
+  FA = "fa",
 }
 
 interface StructuredMessage {
@@ -13,15 +13,11 @@ interface StructuredMessage {
   string: string;
 }
 type LocaleMessages = Record<string, StructuredMessage>;
-const localeData: Record<Locale, LocaleMessages> = {
-  // Default language
-  [Locale.EN]: undefined,
-  [Locale.AR]: locale_AR,
-};
 
 export const localeNames: Record<Locale, string> = {
   [Locale.AR]: "العربيّة",
   [Locale.EN]: "English",
+  [Locale.FA]: "فارسی",
 };
 
 const dotSeparator = "_dot_";
@@ -37,22 +33,73 @@ function getKeyValueJson(messages: LocaleMessages): Record<string, string> {
   }
 }
 
+export function getMatchingLocale(languages: readonly string[]): Locale {
+  const localeEntries = Object.entries(Locale);
+  for (const preferredLocale of languages) {
+    for (const localeEntry of localeEntries) {
+      if (localeEntry[1].toLowerCase() === preferredLocale.toLowerCase()) {
+        return Locale[localeEntry[0]];
+      }
+    }
+  }
+
+  return undefined;
+}
+
 const defaultLocale = Locale.EN;
 
+export interface LocaleContextType {
+  locale: Locale;
+  setLocale: (locale: Locale) => void;
+}
+export const LocaleContext = React.createContext<LocaleContextType>({
+  locale: defaultLocale,
+  setLocale: () => undefined,
+});
+
+const { Consumer: LocaleConsumer, Provider: RawLocaleProvider } = LocaleContext;
+
 const LocaleProvider: React.FC = ({ children }) => {
-  // For now locale can be set here
-  const locale = Locale.EN;
+  const [locale, setLocale] = useLocalStorage(
+    "locale",
+    getMatchingLocale(navigator.languages) || defaultLocale
+  );
+  const [messages, setMessages] = React.useState(undefined);
+
+  React.useEffect(() => {
+    async function changeLocale() {
+      if (locale !== defaultLocale) {
+        // It seems like Webpack is unable to use aliases for lazy imports
+        const mod = await import(`../../../locale/${locale}.json`);
+        setMessages(mod.default);
+      } else {
+        setMessages(undefined);
+      }
+    }
+
+    changeLocale();
+  }, [locale]);
 
   return (
     <IntlProvider
       defaultLocale={defaultLocale}
       locale={locale}
-      messages={getKeyValueJson(localeData[locale])}
+      messages={getKeyValueJson(messages)}
+      onError={err => {
+        console.error(err);
+      }}
       key={locale}
     >
-      {children}
+      <RawLocaleProvider
+        value={{
+          locale,
+          setLocale,
+        }}
+      >
+        {children}
+      </RawLocaleProvider>
     </IntlProvider>
   );
 };
 
-export { LocaleProvider };
+export { LocaleConsumer, LocaleProvider, RawLocaleProvider };
