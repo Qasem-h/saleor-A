@@ -10,11 +10,12 @@
 // }
 
 .call-with-me {
-
   background-size: cover;
   position: relative;
+  border-radius: 30px;
   &_overlay {
     background: #fff;
+    border-radius: 30px;
     padding: 30px 20px 50px;
   }
   &_section-content {

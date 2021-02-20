@@ -10,6 +10,7 @@
       display: block;
     }
     img {
+      border-radius: 10px;
       width: 100%;
       height: auto;
       transition: all 0.5s ease 0s;
@@ -86,6 +87,7 @@
     }
   }
   .all-deals {
+    border-radius: 10px;
     display: block;
     color: #fff;
     background-color: #2e353b;

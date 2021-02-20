@@ -1,0 +1,22 @@
+.app-button {
+    display: inline-flex;
+    font-size: 14px;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    max-height: 2.5em;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    background-color: rgba(29,10,88,0.10196078431372549);
+    color: rgb(138, 138, 138);
+    border-width: 0.0625em;
+    border-style: solid;
+    border-color: transparent;
+    border-radius: 6.25em;
+    padding: 0.5625em 1.1875em;
+    text-decoration: none;
+    transition: color 0.2s ease 0s, background-color ease 0s;
+}
+

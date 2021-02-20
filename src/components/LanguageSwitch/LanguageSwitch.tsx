@@ -1,5 +1,9 @@
 import React from "react";
+import classNames from "classnames";
+
 import { Locale, localeNames } from "../Locale";
+
+import "./scss/index.scss";
 
 interface StaffPreferencesProps {
   locale: Locale;
@@ -11,17 +15,16 @@ const StaffPreferences: React.FC<StaffPreferencesProps> = ({
   onLocaleChange,
 }) => {
   return (
-    <div>
-      <div>
-        <select
-          value={locale}
-          onChange={event => onLocaleChange(event.target.value)}
-        >
-          {Object.values(Locale).map(locale => (
-            <option value={locale}>{localeNames[locale]}</option>
-          ))}
-        </select>
-      </div>
+    <div className="select-dropdown">
+      <select
+        id="select-superpower"
+        value={locale}
+        onChange={event => onLocaleChange(event.target.value)}
+      >
+        {Object.values(Locale).map(locale => (
+          <option value={locale}>{localeNames[locale]}</option>
+        ))}
+      </select>
     </div>
   );
 };

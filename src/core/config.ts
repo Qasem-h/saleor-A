@@ -64,8 +64,7 @@ export const SOCIAL_MEDIA = [
 ];
 export const META_DEFAULTS = {
   custom: [],
-  description:
-    "demo website",
+  description: "demo website",
   image: `${window.location.origin}${require("../images/logo.svg")}`,
   title: "Website - Coming soon",
   type: "website",
@@ -149,7 +148,7 @@ export const CONTACT_INFO = {
 export const ABOUT_US = {
   title: "ABOUT US",
   description:
-    "Founded in 1995 in Muscat. At Sattire we design and manufacture high-quality bespoke curtains tailor made to fit everyone's taste and budget perfectly. All our curtains are made in-house to the highest level of workmanship with personal care and attention to the detail paid to every work we under take. Based on the latest trend of interiors we do custom made craftsmanship. Expertly made curtains and blinds, can enhance a window to stunning effect. When wall paper, carpets and furniture is added it can turn an ordinary room into something quite extra ordinary. We have accomplished several services to help with the individual requirement of each client, ranging from custom designing to implementation etc. Our extensive range of products sourced globally, we are here to help our client in every step. ",
+    "Establshed in 1995, Sattire is an Omani brand which specializes in the design and manufacture of high-quality bespoke curtains tailor made to fit the taste and expectations of individuals. In-house manufacturing with excellent workmanship to provide you with the best of both, quality and price.",
 };
 export const COPYRIGHT = {
   madein: "Made with ♥ in Byso © 2021,All rights reserved",
@@ -197,40 +196,58 @@ export const SLIDER_CONTENT = [
 
 export const SERVICES = [
   {
-    title: "Roller Blinds",
+    title: "Manual and remote control Curtains and Blinds",
     description:
-      "Nullam id dolor id nibh ultricies vehicula ut id elit. Cras mattis Aenean eu leo quam. Pellentesque ornare sem lacinia  nibh, ut fermentum",
+      "Top Quality, Durable Fujikawa motor all the way from JAPAN with 10 Years Warranty. The best in the market for the best results.",
     icon: require("../images/services/icon_1.png"),
   },
   {
-    title: "Roman Blinds",
+    title: "Curtain Rail/Rods of all kinds",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eu leo quam. Pellentesque ornare sem lacinia  nibh, ut fermentum",
+      "All types of curtain rails and rods can be arranged as per client requirements.",
     icon: require("../images/services/icon_2.png"),
   },
   {
-    title: "Ultricies Vulputate Mollis",
+    title: "Ready Made Curtains and Blinds",
     description:
-      "Aenean eu leo quam. Pellentesque ornare sem lacinia  nibh, ut fermentum Aenean eu leo quam. Pellentesque ornare sem lacinia  nibh, ut fermentum",
+      "Top of the Grade Curtains and Blinds prepared in-house for all those looking for a quality products quickly.",
     icon: require("../images/services/icon_3.png"),
   },
   {
-    title: "Odo Aenean Quam Tortor",
+    title: "WallPapers",
     description:
-      "Nullam id dolor id nibh ultricies vehicula ut id elit. Cras mattis consectetur Lorem Aenean eu leo quam. Pellentesque ornare sem lacinia  nibh, ut fermentum",
+      "Decorate your house with the finest wallpapers from our collection. Don't stop for anything less than a Wow!, That's fantastic.",
     icon: require("../images/services/icon_4.png"),
   },
   {
-    title: "Odo Aenean Quam Tortor",
+    title: "Carpets and Rugs",
     description:
-      "Nullam id dolor id nibh ultricies vehicula ut id elit. Cras mattis consectetu sit.Aenean eu leo quam. Pellentesque ornare sem lacinia  nibh, ut fermentum",
+      "Customise your living space with a twist. Choose the perfect carpet for your room and let us help you put together the perfect, eye catching design. Something special, Something Cozy.",
     icon: require("../images/services/icon_5.png"),
   },
   {
-    title: "Odo Aenean Quam Tortor",
+    title: "Furniture Upholstery",
     description:
-      "Nullam id dolor id nibh ultricies vehicula ut id elit. Cras mattis consectetur.Aenean eu leo quam. Pellentesque ornare sem lacinia  nibh, ut fermentum",
+      "Whether you’re buying new furniture or reupholstering an old favorite, fabric selection is one of the most important choices you’ll need to make. Let us do the work and help find the perfect fit for you.",
     icon: require("../images/services/icon_6.png"),
+  },
+  {
+    title: "Tents",
+    description:
+      "We make all kinds of Arabic and other tents as per the client.Check out the tents fabricated by us at Intercontinental, Muscat and Grand Hyatt Muscat to get a sight of our work.",
+    icon: require("../images/services/icon_3.png"),
+  },
+  {
+    title: "Service & Maintenance",
+    description:
+      "A cushoin stain that keeps you up at night or a torn rug that makes you want to throw it away ? A curtain that refuses to open or a Blind that makes you blind in the eyes ? We've got you covered. Let us restore it to it's mint condition and bring out that long overdue smile of yours.",
+    icon: require("../images/services/icon_1.png"),
+  },
+  {
+    title: "Inerior Designing",
+    description:
+      "Complete Revamp of your living space to bring out the hidden charm that reflects  your taste. Curtains to carpets, Furniture to WallPapers. We've got it all covered for you !!",
+    icon: require("../images/services/icon_2.png"),
   },
 ];
 
@@ -240,20 +257,11 @@ export const SKILLS = {
   bg_iamge: require("../images/skill-bg.jpg"),
   skills: [
     {
-      title: "Swags and tails, Flat pelmet, Italian stringing,",
+      title: "Swags, Tails, Flat pelmet, Italian stringing.",
     },
     {
       title:
         "Roman Blinds, Austrian Blinds, Roller blind, vertical blind, etc.",
-    },
-    {
-      title:
-        "Curtains with Pinch Pleat, Pencil pleat, Eyelets, Goblet pleat, Box Pleat, Inverted pleat, Smocking gathers, French pleat, etc.",
-    },
-
-    {
-      title:
-        "Hand and Machine embroidery of silk, sequence, bead, gold silver thread Zari, and crystals to fulfil the need of client.",
     },
     {
       title: "Tie-Back of all shapes and sizes.",
@@ -266,6 +274,15 @@ export const SKILLS = {
     },
     {
       title: "Making all types of blinds and net curtains.",
+    },
+    {
+      title:
+        "Curtains with Pinch Pleat, Pencil pleat, Eyelets, Goblet pleat, Box Pleat, Inverted pleat,Smocking gathers, French pleat, etc.",
+    },
+
+    {
+      title:
+        "Hand and Machine embroidery of silk, sequence, bead, gold silver thread Zari, and crystals to fulfil the need of client.",
     },
   ],
 };

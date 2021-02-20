@@ -3,16 +3,17 @@
 .post-list-item {
   margin-top: 15px;
   margin-bottom: 15px;
-  text-align: center; 
+  text-align: center;
 
   &__post-body {
-    box-shadow: 0 0 30px rgba(31, 45, 61, 0.125);
+    box-shadow: 0 0 10px rgba(31, 45, 61, 0.125);
     border-radius: 5px;
     background: #ffffff;
     padding: 20px;
     margin: -30px 20px 0;
     position: relative;
     min-height: 160px;
+    border-radius: 20px;
 
     &_title {
       font-size: 22px;
@@ -40,6 +41,7 @@
     border-radius: 5px;
     overflow: hidden;
     img {
+      border-radius: 10px;
       object-fit: contain;
       max-width: 100%;
     }

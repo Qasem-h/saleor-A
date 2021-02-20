@@ -9,6 +9,7 @@
     display: -webkit-box !important;
     display: -ms-flexbox !important;
     display: flex !important;
+    padding: 30px;
 
     &_icon {
       margin-right: 1.5rem !important;
@@ -16,8 +17,19 @@
         font-size: 3rem;
       }
     }
+    & p {
+    color: #5b6987;
+    font-size: 16px;
+    line-height: 160%;
+    font-weight: 400;
+    font-style: normal;
+    }
       & h3 {
-        font-size: 20px;
+        font-size: 13px;
+        color: #adb5bd;
+        letter-spacing: .2em;
+        text-transform: capitalize;
+        font-weight: 600;
       }
   }
 }

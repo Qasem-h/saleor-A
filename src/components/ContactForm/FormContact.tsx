@@ -56,10 +56,9 @@ const FormContact: React.FC<IFormContact> = () => {
         <div className="col-md-3 col-lg-4">
           <div className="form-group">
             <TextField
-              name="email"
-              autoComplete="email"
-              label={intl.formatMessage(commonMessages.eMail)}
-              type="email"
+              name="fullname"
+              label={intl.formatMessage({ defaultMessage: "Full Name" })}
+              type="fullname"
               required
             />
           </div>
@@ -67,9 +66,10 @@ const FormContact: React.FC<IFormContact> = () => {
         <div className="col-md-1 col-lg-4">
           <div className="form-group">
             <TextField
-              name="fullname"
-              label={intl.formatMessage({ defaultMessage: "Full Name" })}
-              type="fullname"
+              name="email"
+              autoComplete="email"
+              label={intl.formatMessage(commonMessages.eMail)}
+              type="email"
               required
             />
           </div>

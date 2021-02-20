@@ -32,19 +32,7 @@ const SkillsList: React.FC<SkillsListProps> = ({ title, subTitle }) => {
             </div>
             <div className="col-md-7">
               <div className="skills-overlap">
-                <div className="skills-content">
-                  <h2 className="skills-content_heading">
-                    Our Accomplishments
-                  </h2>
-                  <div className="skills-content_description">
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                      Ducimus id dignissimos nemo minus perspiciatis ullam
-                      itaque voluptas iure vero, nesciunt unde odit aspernatur
-                      distinctio, maiores facere officiis. Cum, esse, iusto?
-                    </p>
-                  </div>
-                </div>
+                <div className="skills-content" />
                 <ul className="skills-content_list-check">
                   {skillsList.skills.map(skill => (
                     <SkillsListItem skill={skill} />

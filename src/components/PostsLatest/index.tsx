@@ -22,7 +22,7 @@ const PostsLatest: React.FC<PostsLatestProps> = ({ title }) => {
                 <Title title={title} subTitle="Latest post from our blog" />
                 <div className="row">
                   {posts.map(({ node: post }) => (
-                    <div className="col-lg-4">
+                    <div className="col-md-4 col-sm-6">
                       <PostListItem post={post} />
                     </div>
                   ))}

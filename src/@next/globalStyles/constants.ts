@@ -68,7 +68,7 @@ export const theme = {
 };
 
 // typography
-export const baseFontFamily = "'Jost','Segoe UI','Arial','sans-serif'";
+export const baseFontFamily = "'Simplifica','Segoe UI','Arial','sans-serif'";
 export const baseFontSize = "1rem"; // 16px
 export const baseLineHeight = "1.25rem"; // 20px
 export const boldFontWeight = 600;
