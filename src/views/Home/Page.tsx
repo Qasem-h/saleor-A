@@ -42,9 +42,11 @@ const Page: React.FC<{
       </script>
       <ImageSlider />
       <ContactForm
-        title={intl.formatMessage({ defaultMessage: "Our Expertise" })}
+        title={intl.formatMessage({
+          defaultMessage: "Or drop your Whatsapp and We'll text you back",
+        })}
         subTitle={intl.formatMessage({
-          defaultMessage: "We will do it in the best way",
+          defaultMessage: "Call us for advice at +968 96066585",
         })}
       />
       <ProductsFeatured
@@ -62,7 +64,7 @@ const Page: React.FC<{
         subTitle={intl.formatMessage({ defaultMessage: "Our Services" })}
       />
       <PostsLatest
-        title={intl.formatMessage({ defaultMessage: "Posts Latest" })}
+        title={intl.formatMessage({ defaultMessage: "Latest Posts" })}
       />
     </>
   );

@@ -17,7 +17,7 @@ const ServicesList: React.FC<ServicesListProps> = ({ title, subTitle }) => {
           <Title title={title} subTitle={subTitle} />
           <div className="row">
             {services.map(service => (
-              <div className="col-md-12">
+              <div className="col-md-3 col-sm-6">
                 <ServicesListItem service={service} />
               </div>
             ))}

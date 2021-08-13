@@ -13,15 +13,15 @@ interface ServicesListItemProps {
 
 const ServicesListItem: React.FC<ServicesListItemProps> = ({ service }) => {
   return (
-    <div className="services-list-item__unit">
-      <div className="services-list-item__unit_icon">
-        <span>
-          <img src={service.icon} alt="" />
-        </span>
+    <div className="post-list-item">
+      <div className="post-list-item__image">
+        <img src={service.icon} alt="" />
       </div>
-      <div>
-        <h3>{service.title}</h3>
-        <p>{service.description}</p>
+      <div className="post-list-item__post-body">
+        <h4 className="post-list-item__post-body_title">{service.title}</h4>
+        <div className="post-list-item__post-body_btn-bar">
+          {service.description}
+        </div>
       </div>
     </div>
   );

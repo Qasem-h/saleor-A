@@ -38,7 +38,7 @@ const PostsLatest: React.FC<PostsLatestProps> = ({ title }) => {
 };
 
 PostsLatest.defaultProps = {
-  title: "Latest",
+  title: "Latest Posts",
   subTitle: "Latest post from our blog",
 };
 

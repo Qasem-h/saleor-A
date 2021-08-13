@@ -34,8 +34,8 @@ const ContactForm: React.FC<ContactFormProps> = ({ title, subTitle }) => {
 };
 
 ContactForm.defaultProps = {
-  title: "We will do it in the best way",
-  subTitle: "Our Expertise",
+  title: "Call us for advice at +968 96066585",
+  subTitle: "Or drop your Whatsapp and We'll text you back",
 };
 
 export default ContactForm;

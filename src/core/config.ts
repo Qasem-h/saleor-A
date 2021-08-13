@@ -151,103 +151,93 @@ export const ABOUT_US = {
     "Establshed in 1995, Sattire is an Omani brand which specializes in the design and manufacture of high-quality bespoke curtains tailor made to fit the taste and expectations of individuals. In-house manufacturing with excellent workmanship to provide you with the best of both, quality and price.",
 };
 export const COPYRIGHT = {
-  madein: "Made with ♥ in Byso © 2021,All rights reserved",
+  madein: "Made with ♥ in ",
+  byso: "Byso ",
+  byso_link: "http://www.byso.pro",
+  rights: "© 2021,All rights reserved",
   by: "By Qasem_h",
   link: "https://github.com/Qasem-h",
 };
 
 export const SLIDER_CONTENT = [
   {
-    title: "Vulputate Mollis Ultricies",
-    description:
-      "Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.",
+    title: "Looking for the Perfect Blinds ?",
+    description: "We'll take care of everything",
     button: "Read More",
     image: require("../images/slider/slider-bg-1.jpg"),
   },
   {
-    title: "Tortor Dapibus",
-    description:
-      "Nullam id dolor id nibh ultricies vehicula ut id elit. Cras mattis consectetur purus sit amet fermentum. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.",
+    title: "Commercial Office",
+    description: "Horizontal & Vertical Blinds Authentic & Affordable ",
     button: "Discover",
     image: require("../images/slider/slider-bg-2.jpg"),
   },
   {
-    title: "Phasellus volutpat metus",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam.",
+    title: "Style & Elegance",
+    description: "Make a difference @Home",
     button: "Buy now",
     image: require("../images/slider/slider-bg-3.jpg"),
   },
   {
-    title: "Ultricies Vulputate Mollis",
-    description:
-      "Aenean eu leo quam. Pellentesque ornare sem lacinia  nibh, ut fermentum massa justo sit amet risus. Cras justo odio, dapibus ac facilisis.",
+    title: "Showroom quality products",
+    description: "but without the price tag",
     button: "Read More",
     image: require("../images/slider/slider-bg-4.jpg"),
-  },
-  {
-    title: "Odo Aenean Quam Tortor",
-    description:
-      "Nullam id dolor id nibh ultricies vehicula ut id elit. Cras mattis consectetur Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    button: "Discover",
-    image: require("../images/slider/slider-bg-5.jpg"),
   },
 ];
 
 export const SERVICES = [
+  // {
+  //   title: "Blinds",
+  //   description:
+  //     "Customizable, elegant vertical blinds with wide range of collections.",
+  //   icon: require("../images/services/Tents.jpg"),
+  // },
   {
-    title: "Manual and remote control Curtains and Blinds",
+    title: "Curtains",
     description:
-      "Top Quality, Durable Fujikawa motor all the way from JAPAN with 10 Years Warranty. The best in the market for the best results.",
-    icon: require("../images/services/icon_1.png"),
+      "Give an elegant touch to your room with specially made curtains.",
+    icon: require("../images/services/curtains1.jpg"),
   },
   {
-    title: "Curtain Rail/Rods of all kinds",
-    description:
-      "All types of curtain rails and rods can be arranged as per client requirements.",
-    icon: require("../images/services/icon_2.png"),
-  },
-  {
-    title: "Ready Made Curtains and Blinds",
-    description:
-      "Top of the Grade Curtains and Blinds prepared in-house for all those looking for a quality products quickly.",
-    icon: require("../images/services/icon_3.png"),
+    title: "Readymade Curtains and Blinds",
+    description: "Select your favourite from our freshly made designs.",
+    icon: require("../images/services/ReadymadeCurtainsAndBlinds.png"),
   },
   {
     title: "WallPapers",
     description:
-      "Decorate your house with the finest wallpapers from our collection. Don't stop for anything less than a Wow!, That's fantastic.",
-    icon: require("../images/services/icon_4.png"),
+      "Decorate your house with the finest wallpapers from our collection.",
+    icon: require("../images/services/wallpaper.jpg"),
   },
   {
-    title: "Carpets and Rugs",
+    title: "Carpets And Rugs",
     description:
-      "Customise your living space with a twist. Choose the perfect carpet for your room and let us help you put together the perfect, eye catching design. Something special, Something Cozy.",
-    icon: require("../images/services/icon_5.png"),
+      "Customise your living space with a twist. Choose the perfect carpet for your room.",
+    icon: require("../images/services/carpetsAndRugs.png"),
   },
   {
     title: "Furniture Upholstery",
-    description:
-      "Whether you’re buying new furniture or reupholstering an old favorite, fabric selection is one of the most important choices you’ll need to make. Let us do the work and help find the perfect fit for you.",
-    icon: require("../images/services/icon_6.png"),
+    description: "Let us do the work and help find the perfect fit for you.",
+    icon: require("../images/services/furnitureUpholstery.jpg"),
   },
   {
     title: "Tents",
     description:
-      "We make all kinds of Arabic and other tents as per the client.Check out the tents fabricated by us at Intercontinental, Muscat and Grand Hyatt Muscat to get a sight of our work.",
-    icon: require("../images/services/icon_3.png"),
+      "We make all kinds of Arabic and other tents as per the client.",
+    icon: require("../images/services/Tents.jpg"),
   },
   {
     title: "Service & Maintenance",
     description:
-      "A cushoin stain that keeps you up at night or a torn rug that makes you want to throw it away ? A curtain that refuses to open or a Blind that makes you blind in the eyes ? We've got you covered. Let us restore it to it's mint condition and bring out that long overdue smile of yours.",
-    icon: require("../images/services/icon_1.png"),
+      "We've got you covered to keep your house looking as fresh as ever.",
+    icon: require("../images/services/ServiceAndMaintainance.jpg"),
   },
   {
-    title: "Inerior Designing",
+    title: "Interior Designing",
     description:
-      "Complete Revamp of your living space to bring out the hidden charm that reflects  your taste. Curtains to carpets, Furniture to WallPapers. We've got it all covered for you !!",
-    icon: require("../images/services/icon_2.png"),
+      "Complete Revamp of your living space to bring out the hidden charm that reflects your taste.",
+    icon: require("../images/services/interiorDesign.jpg"),
   },
 ];
 

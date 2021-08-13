@@ -62,8 +62,10 @@ const Footer: React.FC = () => (
         <div className="col-xs-12 col-sm-12 col-md-12 footer__copyright">
           <p>
             {COPYRIGHT.madein}
+            <a href={COPYRIGHT.byso_link} target="_blank" >{COPYRIGHT.byso}</a>
+            {COPYRIGHT.rights}
             <br />
-            <a href={COPYRIGHT.link}>{COPYRIGHT.by}</a>
+            <a href={COPYRIGHT.link} target="_blank" >{COPYRIGHT.by}</a>
           </p>
         </div>
       </div>
