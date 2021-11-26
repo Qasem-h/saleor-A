@@ -161,7 +161,7 @@ export const COPYRIGHT = {
 
 export const SLIDER_CONTENT = [
   {
-    title: "Looking for the Perfect Blinds ?",
+    title: "Looking for the Perfect Tents ?",
     description: "We'll take care of everything",
     button: "Read More",
     image: require("../images/slider/slider-bg-1.jpg"),
