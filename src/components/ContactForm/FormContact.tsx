@@ -66,10 +66,10 @@ const FormContact: React.FC<IFormContact> = () => {
         <div className="col-md-1 col-lg-4">
           <div className="form-group">
             <TextField
-              name="email"
-              autoComplete="email"
-              label={intl.formatMessage(commonMessages.eMail)}
-              type="email"
+              name="whatsapp"
+              autoComplete="whatsapp"
+              label={intl.formatMessage({ defaultMessage: "Whatsapp Number" })}
+              type="whatsapp"
               required
             />
           </div>
