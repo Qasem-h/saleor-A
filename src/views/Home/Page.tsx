@@ -49,10 +49,6 @@ const Page: React.FC<{
           defaultMessage: "Call us for advice at +968 96066585",
         })}
       />
-      <ProductsFeatured
-        title={intl.formatMessage({ defaultMessage: "New Arrivals" })}
-        subTitle={intl.formatMessage({ defaultMessage: "It’s All New" })}
-      />
       <SkillsList
         title={intl.formatMessage({ defaultMessage: "Our Expertise" })}
         subTitle={intl.formatMessage({
