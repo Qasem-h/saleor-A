@@ -167,7 +167,7 @@ export const SLIDER_CONTENT = [
     image: require("../images/slider/slider-bg-1.jpg"),
   },
   {
-    title: "Commercial Office",
+    title: "Living Area",
     description: "Horizontal & Vertical Blinds Authentic & Affordable ",
     button: "Discover",
     image: require("../images/slider/slider-bg-2.jpg"),
